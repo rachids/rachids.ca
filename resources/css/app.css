@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.post-content code:not(.hljs) {
+    background: #154269;
+    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    padding: .15rem .25rem;
+    color: #fff;
+    font-size: .875rem;
+    border-radius: .25rem;
+    word-break: break-word;
+}
+
+.post-content pre {
+    @apply rounded;
+    color: #fff;
+    overflow-x: auto;
+    width: 15rem;
+    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    min-width: 100%;
+    min-height: 50px;
+}
+
+.post-content * {
+    @apply py-6;
+}
+
+.hljs {
+    background: transparent;
+}
+
+input:checked ~ .dot {
+    transform: translateX(100%);
+    background-color: #48bb78;
+}
