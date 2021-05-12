@@ -29,7 +29,7 @@
                     </x-link.nav-link>
                 </li>
                 <li class="mr-3">
-                    <button id="theme-switcher" class="py-2 px-4 focus:outline-none">🌙</button>
+                    <button id="theme-switcher" class="py-2 px-4 focus:outline-none" title="Changer le thème">🌙</button>
                 </li>
             </ul>
         </div>
