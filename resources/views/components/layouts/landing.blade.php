@@ -20,8 +20,7 @@
     </h2>
 
     <div class="flex gap-4">
-        <x-svg.twitter class="text-red-300 hover:text-red-400"/>
-        <x-svg.youtube class="text-red-300 hover:text-red-400"/>
+        <a href="{{ route("blog.index") }}" class="text-red-100 hover:text-red-300">Blogue</a>
     </div>
 </section>
 
@@ -30,7 +29,7 @@
         <div class="flex-1 pl-12 pt-12">
             <h1 class="text-2xl tracking-tight font-extrabold sm:text-3xl md:text-4xl">
                 <span class="block xl:inline">Développeur Backend</span>
-                <span class="block text-red-300 xl:inline">PHP &amp; Laravel</span>
+                <span class="block text-blue-400 xl:inline">PHP &amp; Laravel</span>
             </h1>
             <p class="mt-3 max-w-md text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                 J’accompagne les organisations dans la conception et la réalisation de solutions de gestion personnalisées
@@ -39,8 +38,8 @@
             </p>
             <p class="mt-3 max-w-md text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                 Découvrez également mon
-                <a href="{{ route("blog.index") }}" class="font-light text-red-300 hover:underline hover:text-red-400">blogue</a>
-                dans lequel je partage mon expérience de développeur ainsi que divers sujets.
+                <a href="{{ route("blog.index") }}" class="font-light text-blue-200 hover:underline hover:text-blue-400">blogue</a>
+                dans lequel je partage mon expérience de développeur et où j'aborde divers sujets.
             </p>
         </div>
 
