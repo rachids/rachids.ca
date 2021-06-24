@@ -18,8 +18,8 @@
 <x-header/>
 
 <!--Container-->
-<div class="container w-full md:max-w-3xl mx-auto pt-20 text-gray-800 dark:text-gray-300">
-        {{ $slot }}
+<div class="container w-full md:max-w-5xl mx-auto pt-20 text-gray-800 dark:text-gray-300">
+    {{ $slot }}
 </div>
 <!--/container-->
 
