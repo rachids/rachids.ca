@@ -21,7 +21,7 @@
         </div>
         <div class="flex flex-1 justify-between m-2 border-t-2 pt-3 pb-1">
             <div class="pl-5">
-                <a href="{{ route('blog.show', $post->slug) }}" class="text-red-700 dark:text-red-300 inline-flex items-center font-semibold tracking-wide">
+                <a href="{{ route('blog.show', $post->slug) }}" class="text-indigo-600 dark:text-blue-200 inline-flex items-center font-semibold tracking-wide">
                     <span class="hover:underline">
                         Lire
                     </span>
@@ -30,7 +30,7 @@
             <div class="flex">
                 <div class="text-sm">
                     <p class="text-grey-dark">
-                        <span title="{{ $post->publish_date->format("d/m/Y") }}">Publié {{ $post->publish_date->diffForHumans() }}</span>
+                        <span title="{{ $post->publish_date->format("d/m/Y") }}">Publié {{ \App\Helpers\DateHelper::showHumanOrDate($post->publish_date) }}</span>
                     </p>
                 </div>
             </div>
