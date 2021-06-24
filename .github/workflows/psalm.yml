@@ -1,21 +1,14 @@
-name: Psalm
+name: Psalm Static analysis
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
-  build:
+  psalm:
+    name: Psalm
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Psalm – Static Analysis for PHP
-        uses: psalm/psalm-github-actions@1.1.2
-        with:
-          # Whether or not to use Psalm’s security analysis
-          security_analysis: true # optional
+      - name: Psalm
+        uses: docker://vimeo/psalm-github-actions
