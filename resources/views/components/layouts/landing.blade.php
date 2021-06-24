@@ -39,10 +39,8 @@
             </p>
             <p class="mt-3 max-w-md text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                 Découvrez également mon
-                <a href="{{ route("blog.index") }}" class="font-light text-red-300 hover:underline hover:text-red-400">
-                    blogue
-                </a>
-                dans lequel je partage mon expérience de développeur et ainsi que divers sujets connexes (ou pas).
+                <a href="{{ route("blog.index") }}" class="font-light text-red-300 hover:underline hover:text-red-400">blogue</a>
+                dans lequel je partage mon expérience de développeur ainsi que divers sujets.
             </p>
         </div>
 
