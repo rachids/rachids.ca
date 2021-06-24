@@ -9,6 +9,8 @@ class BlogController extends Controller
 {
     /**
      * Retourne une liste paginée de billets publiés.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -23,6 +25,9 @@ class BlogController extends Controller
         ]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function show(WinkPost $post)
     {
         $post->load(["author", "tags"]);
