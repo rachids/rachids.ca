@@ -1,19 +1,10 @@
-name: "CI"
+name: "PHP CodeSniffer"
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    paths:
-      - "**.php"
-      - "phpcs.xml"
-      - ".github/workflows/phpcs.yml"
-    paths-ignore:
-    - 'bootstrap/**'
-    - 'config/**'
-    - 'public/**'
-    - 'storage/**'
-    - 'tests/**'
-    - 'vendor/**'
-
+    branches: [ main ]
 jobs:
   phpcs:
     runs-on: ubuntu-latest
@@ -29,7 +20,7 @@ jobs:
           curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
           php phpcs.phar --version
 
-      - uses: tinovyatkin/action-php-codesniffer@v1
+      - uses: thenabeel/action-phpcs@v8
         with:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
