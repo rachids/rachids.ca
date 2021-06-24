@@ -19,7 +19,7 @@ class DateHelper
         $limitPeriod = $date->copy()->addDays($periodInDays);
 
         if($limitPeriod->lessThan(Carbon::now())) {
-            return "le ".$date->format('d/m/Y');
+            return $date->format('d/m/Y');
         }
 
         return $date->diffForHumans();
