@@ -1,0 +1,18 @@
+name: Psalm
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Psalm – Static Analysis for PHP
+        uses: psalm/psalm-github-actions@1.1.2
+        with:
+          # Whether or not to use Psalm’s security analysis
+          security_analysis: true # optional
