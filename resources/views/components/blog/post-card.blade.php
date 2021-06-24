@@ -1,5 +1,5 @@
 <div class="w-auto border-1 dark:border-0 bg-white dark:bg-gray-700 shadow flex mb-5">
-    <div class="h-auto w-1/2 bg-cover rounded-tl rounded-bl text-center overflow-hidden" style="background-image: url('{{ $post->featured_image ?? '' }}')" title="{{ $post->featured_image_caption }}">
+    <div class="h-auto w-1/2 bg-cover rounded-tl rounded-bl text-center overflow-hidden" style="background-image: url('{{ $post->featured_image ?? '' }}')" title="{{ strip_tags($post->featured_image_caption) }}">
     </div>
     <div class="flex flex-col w-full">
         <div class="rounded-b p-4 flex flex-col flex-1 leading-normal mb-auto">
