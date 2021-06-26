@@ -5,8 +5,7 @@
     <title>rachids.ca | {{ $title ?? 'Causeries' }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
-    <meta name="description" content="Blog de rachids dans lequel vous pourrez trouver, entre autres, des articles sur le développement Backend à travers Laravel et PHP.">
-    <meta name="keywords" content="blog, rachids, développeur, backend, laravel, php">
+    {!! SEO::generate(true) !!}
     <meta name="author" content="rachids">
 </head>
 <body class="dark:bg-gray-800">

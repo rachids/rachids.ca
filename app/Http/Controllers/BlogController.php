@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\PostMetaTag;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Support\Facades\Cache;
 use Wink\WinkPost;
 
@@ -14,6 +17,8 @@ class BlogController extends Controller
      */
     public function index()
     {
+        SEOMeta::setTitle("Blogue");
+
         $currentPage = request()->get("page", 1);
 
         $posts = Cache::remember("blog.posts.page{$currentPage}", 60 * 10, function () {
@@ -32,8 +37,34 @@ class BlogController extends Controller
     {
         $post->load(["author", "tags"]);
 
+        $this->generateSEOTags($post);
+
         return view("blog.show", [
             "post" => $post
+        ]);
+    }
+
+    /**
+     * Isolate the SEO tags generation.
+     *
+     * @param WinkPost $post
+     */
+    private function generateSEOTags(WinkPost $post): void
+    {
+        $postMetaTags = PostMetaTag::createFromArray($post->meta);
+
+        SEOMeta::setTitle($post->title);
+        SEOMeta::setDescription($postMetaTags->metaDescription);
+        OpenGraph::setTitle($postMetaTags->openGraphTitle);
+        OpenGraph::setType('article')->setArticle([
+            'published_time' => $post->publish_date->toW3cString(),
+            'author' => $post->author->name,
+            'tag' => $post->tags->implode('name', ','),
+        ]);
+        OpenGraph::setDescription($postMetaTags->openGraphDescription);
+        OpenGraph::addImage($postMetaTags->openGraphImage, [
+            'height' => $postMetaTags->openGraphImageHeight,
+            'width' => $postMetaTags->openGraphImageWidth,
         ]);
     }
 }

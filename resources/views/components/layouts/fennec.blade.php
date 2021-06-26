@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>rachids.ca | {{ $title ?? 'Bienvenue dans mon cybergazon.' }}</title>
+    {!! SEO::generate(true) !!}
     <meta name="author" content="rachids" />
-    <meta name="description" content="rachids est un développeur backend PHP basé à Québec." />
-    <meta name="keywords" content="php, laravel, backend, api, restful, mysql, javascript, vuejs, tailwindcss" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
 </head>

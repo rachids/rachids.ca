@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,6 +12,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        SEOMeta::setTitle("Bienvenue dans mon cybergazon.");
+
         return view("home.index");
     }
 }
