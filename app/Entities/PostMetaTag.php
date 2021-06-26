@@ -1,9 +1,6 @@
 <?php
 
-
 namespace App\Entities;
-
-use Illuminate\Support\Str;
 
 /**
  * Class PostMetaTag
@@ -23,8 +20,8 @@ class PostMetaTag
         public ?string $twitterTitle,
         public ?string $twitterDescription,
         public ?string $twitterImage,
-    )
-    {}
+    ) {
+    }
 
     public static function createFromArray(array $values): self
     {

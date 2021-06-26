@@ -11,7 +11,8 @@ return [
         'defaults'       => [
             'title'        => "rachids.ca", // set false to total remove
             'titleBefore'  => true, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'Je suis un développeur backend PHP basé à Québec et j\'offre notamment des solutions numériques à des problématiques de gestion ainsi que quelques formations.', // set false to total remove
+            'description'  => 'Je suis un développeur backend PHP basé à Québec et j\'offre notamment des solutions'.
+                ' numériques à des problématiques de gestion ainsi que quelques formations.',
             'separator'    => ' - ',
             'keywords'     => [
                 'développeur', 'programmeur', 'codeur', 'backend', 'php', 'laravel', 'quebec', 'developpement',
