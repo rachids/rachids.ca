@@ -6,10 +6,21 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    fontFamily: {
+        'sans': [
+            '"Didact Gothic"','ui-sans-serif','system-ui','-apple-system','BlinkMacSystemFont','"Segoe UI"','Roboto',
+            '"Helvetica Neue"','Arial','"Noto Sans"','sans-serif','"Apple Color Emoji"','"Segoe UI Emoji"',
+            '"Segoe UI Symbol"','"Noto Color Emoji"'
+        ],
+    },
     extend: {
         fontFamily: {
             'hero': ['Helvetica'],
-        }
+        },
+        spacing: {
+            '1/2': '50%',
+            '2/3': '66.666667%',
+        },
     },
   },
   variants: {
