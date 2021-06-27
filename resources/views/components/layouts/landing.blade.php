@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="rachids" />
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+    <meta name="theme-color" content="#e5e7eb"><meta name="background-color" content="#374151">
     {!! SEO::generate(true) !!}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
