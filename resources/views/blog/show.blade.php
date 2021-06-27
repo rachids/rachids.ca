@@ -16,7 +16,7 @@
             <div class="post-content">
                 @if($post->featured_image)
                     <div class="w-full my-2 text-center italic text-sm">
-                        <img src="{{ $post->featured_image }}" class="h-48 w-full object-cover"/>
+                        <img src="{{ $post->featured_image }}" class="h-72 w-full object-cover"/>
                         {!! $post->featured_image_caption !!}
                     </div>
                 @endif
