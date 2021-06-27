@@ -7,6 +7,9 @@
     @yield('css')
     {!! SEO::generate(true) !!}
     <meta name="author" content="rachids">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
 </head>
 <body class="dark:bg-gray-800">
     <x-header />

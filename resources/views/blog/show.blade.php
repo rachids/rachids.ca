@@ -1,19 +1,28 @@
 <x-layouts.fennec>
     <div class="w-full px-4 md:px-6 text-xl leading-normal" style="font-family:Georgia,serif;">
         <article>
-        <div class="font-sans">
-            <p class="text-base md:text-sm text-green-500 dark:text-green-300 font-bold">
-                &lt; <a href="{{ route("blog.index") }}" class="text-base md:text-sm font-bold no-underline hover:underline uppercase">
-                    Retour au blog
-                </a>
-            </p>
-            <x-ui.h1>{{ $post->title }}</x-ui.h1>
-            <p class="text-sm md:text-base font-normal text-gray-600 dark:text-gray-400">{{ $post->publish_date->translatedFormat('d F Y') }}</p>
-        </div>
+            <div class="font-sans">
+                <p class="text-base md:text-sm text-green-500 dark:text-green-300 font-bold">
+                    &lt; <a href="{{ route("blog.index") }}" class="text-base md:text-sm font-bold no-underline hover:underline uppercase">
+                        Retour au blog
+                    </a>
+                </p>
+                <x-ui.h1>{{ $post->title }}</x-ui.h1>
+                <p class="text-sm md:text-base font-normal text-gray-600 dark:text-gray-400 text-center">
+                    {{ $post->publish_date->translatedFormat('d F Y') }}
+                </p>
+            </div>
 
-        <div class="post-content">
-        {!! $post->content !!}
-        </div>
+            <div class="post-content">
+                @if($post->featured_image)
+                    <div class="w-full my-2 text-center italic text-sm">
+                        <img src="{{ $post->featured_image }}" class="h-48 w-full object-cover"/>
+                        {!! $post->featured_image_caption !!}
+                    </div>
+                @endif
+
+               {!! $post->content !!}
+            </div>
     </article>
     </div>
 

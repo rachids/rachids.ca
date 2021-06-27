@@ -23,7 +23,7 @@
 }
 
 .post-content * {
-    @apply py-4 font-sans;
+    @apply py-4 font-sans mt-2;
 }
 
 .post-content > h2 {
