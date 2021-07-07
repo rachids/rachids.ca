@@ -9,7 +9,6 @@
     <file>database</file>
     <file>resources</file>
     <file>routes</file>
-    <file>tests</file>
 
     <exclude-pattern>bootstrap/cache/*</exclude-pattern>
     <exclude-pattern>bootstrap/autoload.php</exclude-pattern>

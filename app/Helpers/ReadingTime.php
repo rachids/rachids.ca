@@ -3,7 +3,6 @@
 
 namespace App\Helpers;
 
-
 class ReadingTime
 {
     // Average reading speed.
@@ -37,5 +36,4 @@ class ReadingTime
     {
         return str_word_count($this->content);
     }
-
 }
