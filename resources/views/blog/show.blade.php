@@ -9,7 +9,8 @@
                 </p>
                 <x-ui.h1>{{ $post->title }}</x-ui.h1>
                 <p class="text-sm md:text-base font-normal text-gray-600 dark:text-gray-400 text-center">
-                    {{ $post->publish_date->translatedFormat('d F Y') }}
+                    {{ $post->publish_date->translatedFormat('d F Y') }} -
+                    Lecture : {{ $readingTime->getReadingTimeInMinutes() }} min.
                 </p>
             </div>
 

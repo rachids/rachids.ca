@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Entities\PostMetaTag;
+use App\Helpers\ReadingTime;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Support\Facades\Cache;
@@ -39,8 +40,11 @@ class BlogController extends Controller
 
         $this->generateSEOTags($post);
 
+        $readingTime = new ReadingTime($post->content);
+
         return view("blog.show", [
-            "post" => $post
+            "post" => $post,
+            "readingTime" => $readingTime,
         ]);
     }
 
