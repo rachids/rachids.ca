@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
+    <x-tracking></x-tracking>
 </head>
 <body class="dark:bg-gray-800">
     <x-header />

@@ -11,6 +11,7 @@
     <meta name="author" content="rachids" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
+    <x-tracking></x-tracking>
 </head>
 
 
