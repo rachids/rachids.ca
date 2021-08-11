@@ -23,7 +23,11 @@ class BlogController extends Controller
         $currentPage = request()->get("page", 1);
 
         $posts = Cache::remember("blog.posts.page{$currentPage}", 60 * 10, function () {
-            return WinkPost::with(["author", "tags"])->live()->orderBy("publish_date", 'desc')->paginate(5);
+            return WinkPost::with(["author:id,slug,name,avatar", "tags:id,slug,name"])
+                ->live()
+                ->orderBy("publish_date", "desc")
+                ->select("id","slug","title","excerpt","publish_date","featured_image","featured_image_caption")
+                ->paginate(8);
         });
 
         return view("blog.index", [

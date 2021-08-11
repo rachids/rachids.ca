@@ -1,37 +1,58 @@
-<x-layouts.fennec>
-    <div class="w-full px-4 md:px-6 text-xl leading-normal" style="font-family:Georgia,serif;">
-        <article>
-            <div class="font-sans">
-                <p class="text-base md:text-sm text-green-500 dark:text-green-300 font-bold">
-                    &lt; <a href="{{ route("blog.index") }}" class="text-base md:text-sm font-bold no-underline hover:underline uppercase">
-                        Retour au blog
-                    </a>
-                </p>
-                <x-ui.h1>{{ $post->title }}</x-ui.h1>
-                <p class="text-sm md:text-base font-normal text-gray-600 dark:text-gray-400 text-center">
-                    {{ $post->publish_date->translatedFormat('d F Y') }} -
-                    Lecture : {{ $readingTime->getReadingTimeInMinutes() }} min.
-                </p>
-            </div>
-
-            <div class="post-content">
-                @if($post->featured_image)
-                    <div class="w-full my-2 text-center italic text-sm">
-                        <img src="{{ $post->featured_image }}" class="h-72 w-full object-cover"/>
-                        {!! $post->featured_image_caption !!}
+<x-layouts.landing>
+    <article>
+        <div class="md:flex">
+            <section class="break-words w-full md:w-1/4 lg:w-1/6">
+                <div class="mx-auto md:mx-0 md:sticky md:top-2 md:mt-6 border rounded-lg">
+                    <div class="flex items-center text-sm text-white p-3">
+                        <x-svg.calendar class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400" />
+                        <span>
+                            Publié le
+                            <time datetime="{{ $post->publish_date }}">{{ $post->publish_date->translatedFormat('d F Y') }}</time>
+                        </span>
                     </div>
+                    <div class="mt-2 flex items-center text-sm text-white border-t p-3">
+                        <x-svg.timer class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400" />
+                        <span>Lecture : {{ $readingTime->getReadingTimeInMinutes() }} min.</span>
+                    </div>
+                    @if($post->featured_image)
+                    <div class="mt-2 flex items-center text-sm text-white text-left border-t p-3">
+                        <x-svg.photo class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400"/>
+                        <span>{!! $post->featured_image_caption !!}</span>
+                    </div>
+                    @endif
+                    @if($post->tags->isNotEmpty())
+                    <div class="mt-2 flex items-center text-sm text-white border-t p-3">
+                        <x-svg.tag class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400" />
+                        <x-blog.tags :tags="$post->tags"/>
+                    </div>
+                    @endif
+                    <div class="mt-2 flex items-center text-sm text-white border-t p-3">
+                        <x-svg.back class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400" />
+                        <a href="{{ route('blog.index') }}" class="text-base md:text-sm text-green-700 dark:text-green-500 no-underline hover:underline">
+                            Retour au blog
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="flex-1 pl-10">
+                <h1 class="text-2xl italic text-center tracking-tight font-bold p-6 sm:text-3xl md:text-4xl">
+                    {{ $post->title }}
+                </h1>
+                @if($post->featured_image)
+                    <img src="{{ $post->featured_image }}" alt="Article image" class="h-32 md:h-64 lg:h-72 w-2/3 mx-auto object-cover object-center"/>
                 @endif
 
-               {!! $post->content !!}
-            </div>
+                <div class="post-content text-xl leading-normal">
+                    {!! $post->content !!}
+                </div>
+
+                <x-ui.divider/>
+
+                <x-blog.author :author="$post->author"/>
+            </section>
+        </div>
+
     </article>
-    </div>
-
-    <x-blog.tags :tags="$post->tags"/>
-
-    <x-ui.divider/>
-
-    <x-blog.author :author="$post->author"/>
 
     @section('css')
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
@@ -39,5 +60,5 @@
         <link rel="stylesheet"
               href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css">
     @endsection
-</x-layouts.fennec>
+</x-layouts.landing>
 

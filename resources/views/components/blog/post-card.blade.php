@@ -1,6 +1,9 @@
-<div class="w-auto border-1 dark:border-0 bg-white dark:bg-gray-700 shadow flex mb-5">
-    <div class="hidden md:block h-auto w-1/2 bg-cover rounded-tl rounded-bl text-center overflow-hidden" style="background-image: url('{{ $post->featured_image ?? '' }}')" title="{{ strip_tags($post->featured_image_caption) }}">
-    </div>
+<div class="transition duration-500 ease-in-out relative flex flex-col bg-gray-900 hover:bg-gray-800 border border-gray-300 rounded-lg p-4 sm:m-2">
+    <a href="{{ route('blog.show', $post->slug) }}" class="hidden md:block h-40 w-full bg-cover rounded-tl rounded-lg text-center overflow-hidden" style="background-image: url('{{ $post->featured_image ?? '' }}')" title="{{ strip_tags($post->featured_image_caption) }}">
+        <span class="sr-only">
+            Lire l'article
+        </span>
+    </a>
     <div class="flex flex-col w-full">
         <div class="rounded-b p-4 flex flex-1 leading-normal mb-auto">
             <div class="mb-10">
@@ -21,7 +24,7 @@
                 </p>
             </div>
         </div>
-        <div class="flex flex-0 justify-between m-2 border-t-2 pt-3 pb-1">
+        <div class="absolute inset-x-0 bottom-0 flex flex-0 justify-between m-2 border-t-2 pt-3 pb-1">
             <div class="pl-5">
                 <a href="{{ route('blog.show', $post->slug) }}" class="text-indigo-600 dark:text-blue-200 inline-flex items-center font-semibold tracking-wide">
                     <span class="hover:underline">
