@@ -1,4 +1,4 @@
-<div class="transition duration-500 ease-in-out relative flex flex-col bg-gray-900 hover:bg-gray-800 border border-gray-300 rounded-lg p-4 sm:m-2">
+<div class="transition duration-500 ease-in-out relative flex flex-col bg-gray-900 shadow hover:shadow-xl hover:bg-gray-800 rounded-lg p-4 sm:m-2">
     <a href="{{ route('blog.show', $post->slug) }}" class="hidden md:block h-40 w-full bg-cover rounded-tl rounded-lg text-center overflow-hidden" style="background-image: url('{{ $post->featured_image ?? '' }}')" title="{{ strip_tags($post->featured_image_caption) }}">
         <span class="sr-only">
             Lire l'article
