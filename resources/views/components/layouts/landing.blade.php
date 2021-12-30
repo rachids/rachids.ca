@@ -17,9 +17,11 @@
 <body class="h-screen bg-gray-700 text-gray-200">
 
 <section id="header" class="bg-gradient-to-br from-blue-900 to-blue-400 sm:h-1/4 flex flex-col justify-center shadow-lg">
-    <a href="{{ route('home.index') }}" class="text-2xl text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-50 hover:from-gray-50 hover:to-gray-300 filter drop-shadow-lg font-hero sm:text-7xl sm:p-5">
-        rachids
-    </a>
+    <h1>
+        <a href="{{ route('home.index') }}" class="text-2xl text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-50 hover:from-gray-50 hover:to-gray-300 filter drop-shadow-lg font-hero sm:text-7xl sm:p-5">
+            rachids
+        </a>
+    </h1>
 </section>
 
 <main class="p-5">
