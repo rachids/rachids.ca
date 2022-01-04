@@ -4,16 +4,20 @@
         <span class="text-blue-400 xl:inline">et causeries</span>
     </h1>
 
-    <p class="mt-2">
+    <p class="mt-2 font-serif">
         J'aime écrire et partager, retrouvez ici des notes, des liens utiles, de la veille et tout autre contenu
         que j'estime pertinent.
     </p>
 
     <div class="flex w-full sm:p-10 pt-2">
         <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 justify-center">
-        @foreach($posts as $post)
+        @forelse($posts as $post)
             <x-blog.post-card :post="$post" />
-        @endforeach
+        @empty
+            <p class="tracking-tight sm:text-4xl">
+                <span class="block">🥺 Aucun article trouvé.</span>
+            </p>
+        @endforelse
         </div>
     </div>
 

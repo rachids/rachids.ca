@@ -1,5 +1,8 @@
-<div class="">
-    @foreach($tags as $tag)
-        <a href="#" class="text-base md:text-sm text-green-700 dark:text-green-500 no-underline hover:underline">#{{ $tag->name }}</a>
-    @endforeach
+<div class="font-mono">
+    @forelse($tags as $tag)
+        <x-ui.link href="{{ route('blog.categorie', $tag->name) }}">{{ $tag->name }}</x-ui.link>
+        @if(! $loop->last), @endif
+    @empty
+        Sans catégorie
+    @endforelse
 </div>

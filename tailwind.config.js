@@ -12,10 +12,16 @@ module.exports = {
             '"Helvetica Neue"','Arial','"Noto Sans"','sans-serif','"Apple Color Emoji"','"Segoe UI Emoji"',
             '"Segoe UI Symbol"','"Noto Color Emoji"'
         ],
+        'serif': [
+            'Heebo', 'Georgia', '"Times New Roman"', 'serif',
+        ],
+        'mono': [
+            '"Ubuntu Mono"', '"Courier New"', 'monospace',
+        ],
     },
     extend: {
         fontFamily: {
-            'hero': ['Helvetica'],
+            'hero': ['"Leckerli One"', 'cursive'],
         },
         spacing: {
             '1/2': '50%',

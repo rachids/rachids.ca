@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entities\PostMetaTag;
 use App\Helpers\ReadingTime;
+use App\Services\BlogService;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Support\Facades\Cache;
@@ -16,19 +17,23 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(string $category = '')
     {
         SEOMeta::setTitle("Blogue");
 
         $currentPage = request()->get("page", 1);
 
-        $posts = Cache::remember("blog.posts.page{$currentPage}", 60 * 10, function () {
-            return WinkPost::with(["author:id,slug,name,avatar", "tags:id,slug,name"])
-                ->live()
-                ->orderBy("publish_date", "desc")
-                ->select("id","slug","title","excerpt","publish_date","featured_image","featured_image_caption")
-                ->paginate(8);
-        });
+        if (!empty($category)) {
+            $posts = BlogService::getPostsByTag($category);
+        } else {
+            $posts = Cache::remember("blog.posts.page{$currentPage}", 60 * 10, static function () {
+                return WinkPost::with(["author:id,slug,name,avatar", "tags:id,slug,name"])
+                    ->live()
+                    ->orderBy("publish_date", "desc")
+                    ->select("id","slug","title","excerpt","publish_date","featured_image","featured_image_caption")
+                    ->paginate(8);
+            });
+        }
 
         return view("blog.index", [
             "posts" => $posts

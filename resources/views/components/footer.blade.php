@@ -11,7 +11,8 @@
         </div>
         <div class="mt-8 md:mt-0 md:order-1">
             <p class="text-center text-base text-gray-400">
-                rachids.ca - &laquo; what matters is always first. &raquo;
+                <x-ui.link href="{{ route('home.index') }}">rachids.ca</x-ui.link>
+                - &laquo; what matters is always first. &raquo;
             </p>
         </div>
     </div>
