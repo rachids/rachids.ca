@@ -13,7 +13,7 @@ class BlogService
             ->live()
             ->tag($tag)
             ->orderBy("publish_date", "desc")
-            ->select("id","slug","title","excerpt","publish_date","featured_image","featured_image_caption")
+            ->select("id", "slug", "title", "excerpt", "publish_date", "featured_image", "featured_image_caption")
             ->paginate(8);
     }
 }
