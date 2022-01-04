@@ -1,57 +1,36 @@
 <x-layouts.landing>
     <article>
-        <div class="md:flex">
-            <section class="break-words w-full md:w-1/4 lg:w-1/6">
-                <div class="mx-auto md:mx-0 md:sticky md:top-2 md:mt-6 border rounded-lg">
-                    <div class="flex items-center text-sm text-white p-3">
-                        <x-svg.calendar class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400" />
-                        <span>
-                            Publié le
-                            <time datetime="{{ $post->publish_date }}">{{ $post->publish_date->translatedFormat('d F Y') }}</time>
-                        </span>
-                    </div>
-                    <div class="mt-2 flex items-center text-sm text-white border-t p-3">
-                        <x-svg.timer class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400" />
-                        <span>Lecture : {{ $readingTime->getReadingTimeInMinutes() }} min.</span>
-                    </div>
-                    @if($post->featured_image)
-                    <div class="mt-2 flex items-center text-sm text-white text-left border-t p-3">
-                        <x-svg.photo class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400"/>
-                        <span>{!! $post->featured_image_caption !!}</span>
-                    </div>
-                    @endif
-                    @if($post->tags->isNotEmpty())
-                    <div class="mt-2 flex items-center text-sm text-white border-t p-3">
-                        <x-svg.tag class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400" />
-                        <x-blog.tags :tags="$post->tags"/>
-                    </div>
-                    @endif
-                    <div class="mt-2 flex items-center text-sm text-white border-t p-3">
-                        <x-svg.back class="flex-shrink-0 mr-1.5 h-5 w-5 text-blue-400" />
-                        <a href="{{ route('blog.index') }}" class="text-base md:text-sm text-green-700 dark:text-green-500 no-underline hover:underline">
-                            Retour au blog
-                        </a>
-                    </div>
+        <div class="md:w-3/5 sm:w-3/4 mx-auto">
+            @if($post->tags->isNotEmpty())
+                <div class="text-sm text-white">
+                    <x-blog.tags :tags="$post->tags"/>
                 </div>
-            </section>
-            <section class="flex-1 pl-10">
-                <h1 class="text-2xl italic text-center tracking-tight font-bold p-6 sm:text-3xl md:text-4xl">
-                    {{ $post->title }}
-                </h1>
-                @if($post->featured_image)
-                    <img src="{{ $post->featured_image }}" alt="Article image" class="h-32 md:h-64 lg:h-72 w-2/3 mx-auto object-cover object-center"/>
-                @endif
+            @endif
+            <h1 class="text-2xl tracking-tight font-bold pb-6 sm:text-3xl md:text-4xl">
+                {{ $post->title }}
+            </h1>
+            <div class="text-base text-white text-center">
+            @if($post->featured_image)
+                <img src="{{ $post->featured_image }}" alt="Article image" class="h-32 md:h-64 lg:h-72 w-2/3 mx-auto object-cover object-center"/>
+                <span class="italic">
+                    Publié le
+                    <time datetime="{{ $post->publish_date }}">{{ $post->publish_date->translatedFormat('d F Y') }}</time>
+                    - {!! $post->featured_image_caption !!}
+                    - Lecture : {{ $readingTime->getReadingTimeInMinutes() }} min.
+                </span>
+            @else
+                <span class="italic">
+                    Publié le
+                    <time datetime="{{ $post->publish_date }}">{{ $post->publish_date->translatedFormat('d F Y') }}</time>
+                    - Lecture : {{ $readingTime->getReadingTimeInMinutes() }} min.
+                </span>
+            @endif
+            </div>
 
-                <div class="post-content text-xl leading-normal">
-                    {!! $post->content !!}
-                </div>
-
-                <x-ui.divider/>
-
-                <x-blog.author :author="$post->author"/>
-            </section>
+            <div class="post-content text-xl leading-normal">
+                {!! $post->content !!}
+            </div>
         </div>
-
     </article>
 
     @section('css')

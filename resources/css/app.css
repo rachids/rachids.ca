@@ -1,19 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Heebo:wght@300&family=Leckerli+One&family=Ubuntu+Mono&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .post-content code:not(.hljs) {
-    background: #154269;
-    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-    padding: .15rem .25rem;
-    color: #fff;
-    font-size: .875rem;
-    border-radius: .25rem;
-    word-break: break-word;
+    @apply rounded text-lg break-words not-italic font-mono py-0.5 px-1 bg-gray-800 text-gray-300;
 }
 
 .post-content pre {
-    @apply rounded;
+    @apply rounded text-lg;
     color: #fff;
     overflow-x: auto;
     width: 15rem;
@@ -22,18 +17,27 @@
     min-height: 50px;
 }
 
-.post-content * {
-    @apply py-4 font-sans mt-2;
-}
-
 .post-content > h2 {
-    @apply text-4xl dark:text-blue-200 text-indigo-600 border-b dark:border-blue-200 border-indigo-600;
+    @apply text-4xl dark:text-blue-200 text-indigo-600 border-b dark:border-blue-200 border-indigo-600 my-5;
 }
 .post-content > h3 {
-     @apply text-2xl dark:text-blue-200 text-indigo-600;
+     @apply text-3xl dark:text-blue-200 text-indigo-600 my-5;
 }
 .post-content > h4 {
-     @apply text-xl dark:text-blue-200 text-indigo-600;
+     @apply text-2xl dark:text-gray-300 text-gray-600 my-5;
+}
+
+.post-content p, .post-content ol, .post-content ul{
+    @apply font-serif text-lg my-3;
+}
+
+.post-content ul {
+    @apply list-disc pl-10 ml-8 list-inside;
+    list-style-type: square;
+}
+
+.post-content ol {
+    @apply list-decimal pl-10;
 }
 
 .post-content a {
@@ -41,16 +45,27 @@
 }
 
 .post-content blockquote {
-    @apply border-l-4 dark:border-blue-200 border-indigo-600 pl-6 italic py-4;
+    @apply border-l-4 dark:border-blue-200 border-indigo-600 my-2 mx-6 pl-6 italic py-4 dark:bg-gray-600 rounded-r shadow;
 }
 
-.post-content ul {
-    @apply ml-8 list-inside;
-    list-style-type: circle;
+.post-content table {
+    @apply min-w-full divide-y divide-gray-200 border-b border-gray-200;
 }
 
-.post-content li {
-    @apply py-1;
+.post-content table > thead {
+    @apply bg-gray-900;
+}
+
+.post-content table th {
+    @apply px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider;
+}
+
+.post-content table tbody {
+    @apply divide-y divide-gray-500 bg-gray-700 font-serif;
+}
+
+.post-content table td {
+    @apply px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300;
 }
 
 .hljs {
