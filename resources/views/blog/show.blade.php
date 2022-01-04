@@ -27,7 +27,7 @@
             @endif
             </div>
 
-            <div class="post-content text-xl leading-normal">
+            <div class="post-content leading-normal">
                 {!! $post->content !!}
             </div>
         </div>

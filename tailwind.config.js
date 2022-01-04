@@ -21,7 +21,7 @@ module.exports = {
     },
     extend: {
         fontFamily: {
-            'hero': ['"Leckerli One"', 'script', 'Wingdings'],
+            'hero': ['"Leckerli One"', 'cursive'],
         },
         spacing: {
             '1/2': '50%',
