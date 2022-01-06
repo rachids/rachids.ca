@@ -27,7 +27,7 @@
         </div>
 
         <div class="lg:w-1/2">
-            <div class="max-w-md mx-auto py-4 px-8 bg-white shadow-lg rounded-lg md:mt-10 lg:mt-0 mb-20">
+            <div class="max-w-md mx-auto py-4 px-8 bg-white shadow-lg rounded-lg mt-10 lg:mt-0 mb-20">
                 <div class="flex justify-center md:justify-end -mt-16">
                     <img class="w-20 h-20 object-cover rounded-full" src="https://www.starpng.com/public/uploads/preview/youtube-logo-transparent-png-image-11576004344t8rcunadzv.png">
                 </div>
