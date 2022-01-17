@@ -5,7 +5,7 @@
 
             <x-svg.twitter />
 
-            <x-svg.youtube />
+            <x-svg.youtube class="text-gray-400 hover:text-gray-500" />
 
             <x-svg.twitch />
         </div>

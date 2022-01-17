@@ -28,19 +28,19 @@
 
         <div class="lg:w-1/2">
             <div class="max-w-md mx-auto py-4 px-8 bg-white shadow-lg rounded-lg mt-10 lg:mt-0 mb-20">
-                <div class="flex justify-center md:justify-end -mt-16">
-                    <img class="w-20 h-20 object-cover rounded-full" src="https://www.starpng.com/public/uploads/preview/youtube-logo-transparent-png-image-11576004344t8rcunadzv.png">
-                </div>
                 <div>
-                    <h2 class="text-gray-800 text-3xl font-semibold font-sans">Dernière vidéo publiée</h2>
+                    <h2 class="text-gray-800 text-3xl font-semibold font-sans">
+                        Dernière vidéo publiée
+                    </h2>
                     <p class="mt-2 text-gray-600 font-serif font-semibold">
                         Une de mes résolutions, pour 2022, est de créer du contenu vidéo.<br/>
-                        Qu'il s'agisse de découverte, d'apprentissage, de tutoriels ou encore d'astuce, vous trouverez
+                        Qu'il s'agisse de découverte, d'apprentissage, de tutoriels ou encore d'astuces, vous trouverez
                         dans cet encart une description et un lien vers la dernière vidéo publiée sur ma chaîne.<br/>
                         Restez à l'affût, première publication pour janvier !
                     </p>
                 </div>
-                <div class="flex justify-end mt-4">
+                <div class="flex justify-end gap-2 mt-4">
+                    <x-svg.youtube class="text-red-600 hover:text-red-500"/>
                     <a href="{{ config('social.youtube') }}" class="text-xl font-medium text-indigo-500 font-serif">Consulter la chaîne</a>
                 </div>
             </div>

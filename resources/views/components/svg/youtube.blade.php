@@ -1,6 +1,5 @@
 <a {{ $attributes->merge([
     "href" => config("social.youtube"),
-    "class" => "text-gray-400 hover:text-gray-500",
     "title" => "Vers ma chaîne Youtube"
 ]) }}>
     <span class="sr-only">Youtube</span>
