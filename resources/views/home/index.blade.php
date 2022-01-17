@@ -41,7 +41,7 @@
                 </div>
                 <div class="flex justify-end gap-2 mt-4">
                     <x-svg.youtube class="text-red-600 hover:text-red-500"/>
-                    <a href="{{ config('social.youtube') }}" class="text-xl font-medium text-indigo-500 font-serif">Consulter la chaîne</a>
+                    <a href="{{ config('social.youtube') }}" class="text-xl font-medium text-indigo-600 font-serif">Consulter la chaîne</a>
                 </div>
             </div>
         </div>

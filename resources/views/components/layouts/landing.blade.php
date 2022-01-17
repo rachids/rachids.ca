@@ -7,6 +7,7 @@
     <meta name="author" content="rachids" />
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="theme-color" content="#e5e7eb"><meta name="background-color" content="#374151">
     {!! SEO::generate(true) !!}
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
