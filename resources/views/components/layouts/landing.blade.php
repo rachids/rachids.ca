@@ -11,7 +11,6 @@
     {!! SEO::generate(true) !!}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
-    <x-tracking></x-tracking>
 </head>
 
 <body class="h-screen bg-gray-700 text-gray-200">
