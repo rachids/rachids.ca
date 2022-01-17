@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     <meta name="theme-color" content="#e5e7eb"><meta name="background-color" content="#374151">
     {!! SEO::generate(true) !!}
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @yield('css')
     <x-tracking></x-tracking>
 </head>
@@ -34,8 +34,6 @@
 
 <x-footer/>
 
-<script src="{{ asset('js/app.js') }}"></script>
-
+<script src="{{ mix('js/app.js') }}"></script>
 </body>
-
 </html>
