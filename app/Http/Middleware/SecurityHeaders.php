@@ -19,7 +19,7 @@ class SecurityHeaders
         $response =  $next($request);
 
         $response->header('Strict-Transport-Security', 'max-age=31536000; includeSubdomains');
-        $response->header('Content-Security-Policy', "script-src 'self'; object-src 'none'");
+        $response->header('Content-Security-Policy', "script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net; object-src 'none';");
         $response->header('X-Frame-Options', 'SAMEORIGIN');
         $response->header('X-Content-Type-Options', 'nosniff');
         $response->header('Referrer-Policy', 'strict-origin-when-cross-origin');
