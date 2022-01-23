@@ -23,7 +23,7 @@
         </a>
     </div>
 
-    <div class="flex-grow bg-gray-700 max-w-screen-2xl 2xl:mx-auto 2xl:rounded-lg 2xl:-mt-10 2xl:pb-10 mt-5 2xl:drop-shadow-md">
+    <div class="flex-grow bg-gray-700 2xl:w-9/12 2xl:mx-auto 2xl:rounded-lg 2xl:-mt-10 2xl:pb-10 mt-5 2xl:drop-shadow-md">
         <x-ui.nav/>
 
         <main class="p-5 grid justify-center">
