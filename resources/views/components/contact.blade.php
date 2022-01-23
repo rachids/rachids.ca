@@ -2,7 +2,7 @@
     'class' => 'bg-gradient-to-b from-blue-900 to-blue-400 p-3 mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
 ]) }}>
     <div>
-        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label for="name" class="block text-sm font-medium text-gray-300">
             Nom:
         </label>
         <div class="mt-1">
@@ -11,7 +11,7 @@
     </div>
 
     <div>
-        <label for="courriel" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label for="courriel" class="block text-sm font-medium text-gray-300">
             Courriel:
         </label>
         <div class="mt-1">
@@ -20,7 +20,7 @@
     </div>
 
     <div>
-        <label for="sujet" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label for="sujet" class="block text-sm font-medium text-gray-300">
             Sujet:
         </label>
         <div class="mt-1">
@@ -29,7 +29,7 @@
     </div>
 
     <div>
-        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label for="message" class="block text-sm font-medium text-gray-300">
             Message:
         </label>
         <div class="mt-1">
