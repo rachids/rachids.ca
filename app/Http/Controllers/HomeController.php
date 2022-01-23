@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Youtube\YoutubeService;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
@@ -11,15 +13,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        SEOMeta::setTitle("Bienvenue dans mon cybergazon.");
+        SEOMeta::setTitle("Laravel Web Artisan");
 
-        return view("home.index");
+        $latestVideo = Cache::remember('last-uploaded-video', 60 * 60 * 24 * 3, static function () {
+            return (new YoutubeService())->getLatestVideo();
+        });
+
+        return view("home.index", [
+            'latestVideo' =>  $latestVideo,
+        ]);
     }
 
-    public function contact()
+    public function about()
     {
-        SEOMeta::setTitle("Entrons en contact");
+        SEOMeta::setTitle("Qui suis-je");
 
-        return view("home.contact");
+        return view("home.about");
     }
 }
