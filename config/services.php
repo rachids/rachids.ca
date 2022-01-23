@@ -34,4 +34,10 @@ return [
         'key' => env('UNSPLASH_ACCESS_KEY'),
     ],
 
+    'youtube' => [
+        'key' => env('YOUTUBE_API_KEY'),
+        'channel_id' => env('YOUTUBE_CHANNEL_ID'),
+        'latest_video_cache' => env('YOUTUBE_LATEST_VIDEO_CACHE_IN_SECONDS', 57600),
+    ],
+
 ];

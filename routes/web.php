@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 // Pages
 Route::get("/", [HomeController::class, "index"])->name("home.index");
-Route::get("/contact", [HomeController::class, "contact"])->name("home.contact");
+Route::get("/a-propos", [HomeController::class, "about"])->name("home.about");
 
 // Blog
 Route::get("/blog", [BlogController::class, "index"])->name("blog.index");
