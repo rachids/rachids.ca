@@ -7,11 +7,11 @@
     <div class="flex flex-col w-full">
         <div class="rounded-b p-4 flex flex-1 leading-normal mb-auto">
             <div class="mb-10">
-                <p class="text-sm text-gray-900 dark:text-gray-300 flex items-center font-mono">
+                <p class="text-sm text-gray-300 flex items-center font-mono">
                     <x-blog.tags :tags="$post->tags"/>
                 </p>
-                <div class="text-black dark:text-gray-200 font-bold text-xl mb-2">
-                    <a href="{{ route('blog.show', $post->slug) }}" class="hover:text-indigo-600 dark:hover:text-blue-200">
+                <div class="text-gray-200 font-bold text-xl mb-2">
+                    <a href="{{ route('blog.show', $post->slug) }}" class="hover:text-blue-200">
                         {{ $post->title }}
                     </a>
                 </div>
@@ -22,7 +22,7 @@
         </div>
         <div class="absolute inset-x-0 bottom-0 flex flex-0 justify-between m-2 border-t-2 pt-3 pb-1 font-serif">
             <div class="pl-5">
-                <a href="{{ route('blog.show', $post->slug) }}" class="text-indigo-600 dark:text-blue-200 inline-flex items-center font-semibold tracking-wide">
+                <a href="{{ route('blog.show', $post->slug) }}" class="text-blue-200 inline-flex items-center font-semibold tracking-wide">
                     <span class="hover:underline">
                         Lire
                     </span>

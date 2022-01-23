@@ -17,7 +17,7 @@
 <body class="h-screen bg-gray-700 text-gray-200">
 
 <div id="header" class="bg-gradient-to-br from-blue-900 to-blue-400 sm:h-1/4 flex flex-col justify-center shadow-lg">
-    <a href="{{ route('home.index') }}" class="text-2xl text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-50 to-gray-300 hover:from-gray-300 hover:to-gray-50 filter drop-shadow-lg font-hero sm:text-7xl sm:p-5">
+    <a href="{{ route('home.index') }}" class="text-2xl text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-50 to-gray-300 hover:from-gray-300 hover:to-gray-50 drop-shadow-lg font-hero sm:text-7xl sm:p-5">
         rachids
     </a>
 </div>
