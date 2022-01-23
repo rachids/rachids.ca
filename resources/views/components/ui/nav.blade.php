@@ -33,7 +33,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="md:hidden" id="mobile-menu">
+    <div class="md:hidden hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <x-ui.nav-button-mobile href="{{ route('home.index') }}" :active="request()->routeIs('home.index')">
                 Accueil
