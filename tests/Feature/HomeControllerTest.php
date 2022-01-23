@@ -3,11 +3,13 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Helpers\HasExternalProvider;
 use Tests\TestCase;
 
 class HomeControllerTest extends TestCase
 {
     use RefreshDatabase;
+    use HasExternalProvider;
 
     protected function setUp(): void
     {
@@ -25,7 +27,8 @@ class HomeControllerTest extends TestCase
      */
     public function test_it_loads_the_home_page()
     {
-        $this->withoutExceptionHandling();
+        $this->mockYoutubeLatestVideo();
+
         $response = $this->get(route('home.index'));
 
         $response->assertStatus(200);

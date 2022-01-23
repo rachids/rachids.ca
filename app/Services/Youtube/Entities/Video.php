@@ -13,8 +13,8 @@ class Video
         public string $thumbnail,
         public string $description,
         public Carbon $publishedAt,
-    )
-    {
+    ) {
+
     }
 
     public function excerpt(): string

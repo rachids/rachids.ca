@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\Http;
 
 class YoutubeService
 {
-    public function __construct()
-    {
-    }
-
     public function getLatestVideo(): Video
     {
         $parameters= [
