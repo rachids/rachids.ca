@@ -25,24 +25,38 @@
                         Dernière vidéo publiée
                     </h2>
 
-                    <a href="{{ $latestVideo->getUrl() }}">
-                        <img src="{{ $latestVideo->thumbnail }}" alt="Miniature de la vidéo: {{ $latestVideo->title }}" class="object-center mx-auto"/>
-                    </a>
+                    @if($latestVideo)
 
-                    <h3 class="text-xl font-semibold font-sans text-black">
-                        {{ $latestVideo->getTitle() }}
-                    </h3>
+                        <a href="{{ $latestVideo->getUrl() }}">
+                            <img src="{{ $latestVideo->thumbnail }}" alt="Miniature de la vidéo: {{ $latestVideo->title }}" class="object-center mx-auto"/>
+                        </a>
 
-                    <p class="mt-2 text-gray-600 font-serif font-semibold">
-                        {{ $latestVideo->excerpt() }}
-                    </p>
-                </div>
-                <div class="flex justify-end gap-2 mt-4">
-                    <x-svg.youtube class="text-red-600 hover:text-red-500" href="{{ $latestVideo->getUrl() }}"/>
-                    <a href="{{ $latestVideo->getUrl() }}" class="text-xl font-medium text-indigo-600 font-serif">
-                        Regarder la vidéo
-                    </a>
-                </div>
+                        <h3 class="text-xl font-semibold font-sans text-black">
+                            {{ $latestVideo->getTitle() }}
+                        </h3>
+
+                        <p class="mt-2 text-gray-600 font-serif font-semibold">
+                            {{ $latestVideo->excerpt() }}
+                        </p>
+                    </div>
+                    <div class="flex justify-end gap-2 mt-4">
+                        <x-svg.youtube class="text-red-600 hover:text-red-500" href="{{ $latestVideo->getUrl() }}"/>
+                        <a href="{{ $latestVideo->getUrl() }}" class="text-xl font-medium text-indigo-600 font-serif">
+                            Regarder la vidéo
+                        </a>
+                    </div>
+                    @else
+                        <p class="mt-2 text-gray-600 font-serif font-semibold">
+                            Une de mes résolutions, pour 2022, est de créer du contenu vidéo.<br/>
+                            Qu'il s'agisse de découverte, d'apprentissage, de tutoriels ou encore d'astuces, vous trouverez
+                            dans cet encart une description et un lien vers la dernière vidéo publiée sur ma chaîne.<br/>
+                            Restez à l'affût, première publication pour janvier !
+                        </p>
+                        <div class="flex justify-end gap-2 mt-4">
+                            <x-svg.youtube class="text-red-600 hover:text-red-500"/>
+                            <a href="{{ config('social.youtube') }}" class="text-xl font-medium text-indigo-600 font-serif">Consulter la chaîne</a>
+                        </div>
+                    @endif
             </div>
         </div>
     </div>
