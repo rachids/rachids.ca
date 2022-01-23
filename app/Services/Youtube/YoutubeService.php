@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Http;
 
 class YoutubeService
 {
-    public function getLatestVideo(): Video
+    public function getLatestVideo(): false|Video
     {
         $parameters= [
             'part' => 'snippet',
@@ -19,7 +19,13 @@ class YoutubeService
             'type' => 'video',
         ];
 
-        $lastVideo = $this->fetch('search', $parameters)->json('items')[0];
+        $response = $this->fetch('search', $parameters)->json('items');
+
+        if (! $response) {
+            return false;
+        }
+
+        $lastVideo = $response[0];
 
         return new Video(
             $lastVideo['id']['videoId'],

@@ -14,7 +14,6 @@ class Video
         public string $description,
         public Carbon $publishedAt,
     ) {
-
     }
 
     public function excerpt(): string
