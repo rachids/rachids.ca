@@ -24,8 +24,8 @@
                         Blog
                     </x-ui.nav-button>
 
-                    <x-ui.nav-button href="{{ route('home.contact') }}" :active="request()->routeIs('home.contact')">
-                        Contact
+                    <x-ui.nav-button href="{{ route('home.about') }}" :active="request()->routeIs('home.about')">
+                        À propos
                     </x-ui.nav-button>
                 </div>
             </div>
@@ -43,8 +43,8 @@
                 Blog
             </x-ui.nav-button-mobile>
 
-            <x-ui.nav-button-mobile href="{{ route('home.contact') }}" :active="request()->routeIs('home.contact')">
-                Contact
+            <x-ui.nav-button-mobile href="{{ route('home.about') }}" :active="request()->routeIs('home.about')">
+                À propos
             </x-ui.nav-button-mobile>
         </div>
     </div>
