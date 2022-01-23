@@ -14,25 +14,27 @@
     @yield('css')
 </head>
 
-<body class="h-screen 2xl:bg-gray-300 bg-gray-700 text-gray-200">
+<body class="2xl:bg-gray-300 bg-gray-700 text-gray-200">
 
-<div id="header" class="bg-gradient-to-br from-blue-900 to-blue-400 sm:h-1/4 flex flex-col justify-center 2xl:shadow-none drop-shadow-lg">
-    <a href="{{ route('home.index') }}" class="text-2xl text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-50 to-gray-300 hover:from-gray-300 hover:to-gray-50 drop-shadow-lg font-hero sm:text-7xl sm:p-5">
-        rachids
-    </a>
+<div class="h-screen flex flex-col">
+    <div id="header" class="flex-none flex justify-center bg-gradient-to-br from-blue-900 to-blue-400 w-full sm:h-36 2xl:drop-shadow-none drop-shadow-lg">
+        <a href="{{ route('home.index') }}" class="sm:p-5 2xl:p-2 drop-shadow-lg hover:drop-shadow-none">
+            <img src="{{ asset('storage/img/banner-logo.webp') }}" alt="rachids" class="object-center object-cover h-16"/>
+        </a>
+    </div>
+
+    <div class="flex-grow bg-gray-700 max-w-screen-2xl 2xl:mx-auto 2xl:rounded-lg 2xl:-mt-10 2xl:pb-10 mt-5 2xl:drop-shadow-md">
+        <x-ui.nav/>
+
+        <main class="p-5 grid justify-center">
+            <div class="sm:pl-12 sm:pt-12">
+                {{ $slot }}
+            </div>
+        </main>
+    </div>
+
+    <x-footer/>
 </div>
-
-<div class="bg-gray-700 max-w-screen-2xl 2xl:mx-auto 2xl:rounded-lg 2xl:-mt-10 mt-5 2xl:drop-shadow-lg">
-    <x-ui.nav/>
-
-    <main class="p-5 grid justify-center">
-        <div class="sm:pl-12 sm:pt-12">
-            {{ $slot }}
-        </div>
-    </main>
-</div>
-
-<x-footer/>
 
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
