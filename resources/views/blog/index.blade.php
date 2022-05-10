@@ -1,7 +1,6 @@
 <x-layouts.landing>
     <h1 class="text-2xl tracking-tight font-extrabold sm:text-3xl md:text-4xl">
-        <span class="xl:inline">Billets</span>
-        <span class="text-blue-400 xl:inline">et causeries</span>
+        <span class="xl:inline">Billets et causeries</span>
     </h1>
 
     <p class="mt-2 font-serif">
@@ -9,8 +8,7 @@
         que j'estime pertinent.
     </p>
 
-    <div class="flex w-full sm:p-10 pt-2">
-        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 justify-center">
+    <div class="w-full sm:p-10 pt-2">
         @forelse($posts as $post)
             <x-blog.post-card :post="$post" />
         @empty
@@ -18,7 +16,6 @@
                 <span class="block">🥺 Aucun article trouvé.</span>
             </p>
         @endforelse
-        </div>
     </div>
 
     <x-blog.pagination :paginator="$posts"/>

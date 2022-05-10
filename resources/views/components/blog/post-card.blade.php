@@ -1,38 +1,43 @@
-<div class="transition duration-500 ease-in-out relative flex flex-col bg-gray-900 shadow hover:shadow-xl hover:bg-gray-800 rounded-lg p-4 sm:m-2">
-    <a href="{{ route('blog.show', $post->slug) }}" class="hidden md:block h-40 w-full bg-cover rounded-tl rounded-lg text-center overflow-hidden" style="background-image: url('{{ $post->featured_image ?? '' }}')" title="{{ strip_tags($post->featured_image_caption) }}">
-        <span class="sr-only">
-            Lire l'article
-        </span>
-    </a>
-    <div class="flex flex-col w-full">
-        <div class="rounded-b p-4 flex flex-1 leading-normal mb-auto">
-            <div class="mb-10">
-                <p class="text-sm text-gray-300 flex items-center font-mono">
-                    <x-blog.tags :tags="$post->tags"/>
+<div class="transition duration-500 ease-in-out flex bg-gray-900 shadow hover:shadow-xl hover:bg-gray-800 rounded-lg m-2 lg:m-4 overflow-hidden">
+    <div class="flex-shrink-0 hidden md:block">
+        <a href="{{ route('blog.show', $post->slug) }}">
+            <img class="h-full w-48 lg:w-64 object-cover"
+                 src="{{ $post->featured_image ?? '' }}"
+                 title="{{ strip_tags($post->featured_image_caption) }}"
+                 alt="{{ strip_tags($post->featured_image_caption) }}"
+            />
+        </a>
+    </div>
+
+    <div class="flex-1 p-6 flex flex-col justify-between">
+        <div class="flex-1 p-3">
+            <p class="text-sm text-gray-300 flex items-center font-mono">
+                <x-blog.tags :tags="$post->tags"/>
+            </p>
+            <a href="{{ route('blog.show', $post->slug) }}" class="block mt-2">
+                <p class="text-gray-200 font-bold text-2xl mb-2 hover:text-blue-200">
+                    {{ $post->title }}
                 </p>
-                <div class="text-gray-200 font-bold text-xl mb-2">
-                    <a href="{{ route('blog.show', $post->slug) }}" class="hover:text-blue-200">
-                        {{ $post->title }}
-                    </a>
-                </div>
-                <p class="text-grey-darker text-base font-serif">
+                <p class="mt-3 text-grey-darker text-base font-serif">
                     {{ $post->excerpt }}
                 </p>
-            </div>
+            </a>
         </div>
-        <div class="absolute inset-x-0 bottom-0 flex flex-0 justify-between m-2 border-t-2 pt-3 pb-1 font-serif">
-            <div class="pl-5">
-                <a href="{{ route('blog.show', $post->slug) }}" class="text-blue-200 inline-flex items-center font-semibold tracking-wide">
-                    <span class="hover:underline">
-                        Lire
-                    </span>
+        <div class="mt-6 p-3 flex items-center">
+            <div class="flex-shrink-0">
+                <a href="https://twitter.com/rachid_in">
+                    <span class="sr-only">rachids</span>
+                    <img class="h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1483599172158865413/4z4_QeAV_400x400.jpg" alt="Avatar de rachids">
                 </a>
             </div>
-            <div class="flex">
-                <div class="text-sm">
-                    <p class="text-grey-dark">
-                        <span title="{{ $post->publish_date->format("d/m/Y") }}">Publié {{ \App\Helpers\DateHelper::showHumanOrDate($post->publish_date) }}</span>
-                    </p>
+            <div class="ml-3">
+                <p class="text-sm font-medium">
+                    <a href="https://twitter.com/rachid_in" class="hover:underline"> rachids </a>
+                </p>
+                <div class="flex space-x-1 text-sm text-gray-500">
+                    <time datetime="{{ $post->publish_date->format("Y-m-d") }}"> {{ \App\Helpers\DateHelper::showHumanOrDate($post->publish_date) }} </time>
+                    <span aria-hidden="true"> &middot; </span>
+                    {{--<span> 6 min read </span>--}}
                 </div>
             </div>
         </div>
