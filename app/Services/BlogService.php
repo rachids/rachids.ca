@@ -2,18 +2,18 @@
 
 namespace App\Services;
 
+use App\Models\BlogPost;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Wink\WinkPost;
 
 class BlogService
 {
     public static function getPostsByTag(string $tag): LengthAwarePaginator
     {
-        return WinkPost::with(["author:id,slug,name,avatar", "tags:id,slug,name"])
+        return BlogPost::with(["author:id,slug,name,avatar", "tags:id,slug,name"])
             ->live()
             ->tag($tag)
             ->orderBy("publish_date", "desc")
-            ->select("id", "slug", "title", "excerpt", "publish_date", "featured_image", "featured_image_caption")
+            ->select("id", "slug", "title", "excerpt", "body", "publish_date", "featured_image", "featured_image_caption")
             ->paginate(8);
     }
 }

@@ -39,7 +39,7 @@
                 <div class="flex space-x-1 text-sm text-gray-500">
                     <time datetime="{{ $post->publish_date->format("Y-m-d") }}"> {{ \App\Helpers\DateHelper::showHumanOrDate($post->publish_date) }} </time>
                     <span aria-hidden="true"> &middot; </span>
-                    {{--<span> 6 min read </span>--}}
+                    <span> {{ $post->getReadingTime() }} min. </span>
                 </div>
             </div>
         </div>
