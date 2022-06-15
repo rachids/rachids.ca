@@ -27,7 +27,9 @@
             <div class="flex-shrink-0">
                 <a href="https://twitter.com/rachid_in">
                     <span class="sr-only">rachids</span>
-                    <img class="h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1483599172158865413/4z4_QeAV_400x400.jpg" alt="Avatar de rachids">
+                    <img class="h-10 rounded-full"
+                         src="https://i.imgur.com/3A7zVlV.png?1"
+                         alt="Avatar de rachids" />
                 </a>
             </div>
             <div class="ml-3">
@@ -37,7 +39,7 @@
                 <div class="flex space-x-1 text-sm text-gray-500">
                     <time datetime="{{ $post->publish_date->format("Y-m-d") }}"> {{ \App\Helpers\DateHelper::showHumanOrDate($post->publish_date) }} </time>
                     <span aria-hidden="true"> &middot; </span>
-                    {{--<span> 6 min read </span>--}}
+                    <span> {{ $post->getReadingTime() }} min. </span>
                 </div>
             </div>
         </div>

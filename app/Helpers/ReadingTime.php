@@ -24,7 +24,7 @@ class ReadingTime
     {
         $minutes = floor($this->calculateWords() / self::AVERAGE_WORDS_PER_MINUTE);
 
-        return $minutes < 1 ? 1 : $minutes;
+        return max($minutes, 1);
     }
 
     /**

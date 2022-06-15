@@ -16,7 +16,7 @@
                     Publié le
                     <time datetime="{{ $post->publish_date }}">{{ $post->publish_date->translatedFormat('d F Y') }}</time>
                     - {!! $post->featured_image_caption !!}
-                    - Lecture : {{ $readingTime->getReadingTimeInMinutes() }} min.
+                    - Lecture : {{ $post->getReadingTime() }} min.
                 </span>
             @else
                 <span class="italic">
