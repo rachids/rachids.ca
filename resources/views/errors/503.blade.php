@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="theme-color" content="#e5e7eb">
     <meta name="background-color" content="#374151">
-    <title>Rachid Sebbouh, développeur backend à Québec</title>
+    <title>Rachid Sebbouh, développeur backend Laravel à Québec</title>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
