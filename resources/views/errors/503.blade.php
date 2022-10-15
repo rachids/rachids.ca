@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<div class="grid h-screen place-items-center bg-fixed bg-cover bg-center" style="background-image: url({{asset('storage/img/rachids-php-developer-backend-quebec.png')}})">
+<div class="grid h-screen place-items-center bg-fixed bg-cover bg-center bg-indigo-900" style="background-image: url({{asset('storage/img/rachids-php-developer-backend-quebec.png')}})">
     <div class="text-white text-center backdrop-blur-sm bg-orange-300/30 p-7 rounded-md">
         <h1 class="text-4xl font-semibold">Rachid Sebbouh, développeur backend Laravel à Québec</h1>
         <p class="mt-5 text-lg">Mon site est présentement en construction, retrouvez-moi sur ces réseaux:</p>
